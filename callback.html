@@ -1,0 +1,10 @@
+<!doctype html><meta charset="utf-8"><title>Tesla OAuth callback</title>
+<h3>Tesla authorization code</h3>
+<p>Copy this code and send it to Tesla Ready within a few minutes (it expires quickly):</p>
+<pre id="c" style="font-size:1.1em;word-break:break-all;background:#eee;padding:8px"></pre>
+<p id="s"></p>
+<script>
+const p=new URLSearchParams(location.search);
+document.getElementById('c').textContent=p.get('code')||('(no code) '+(p.get('error')||''));
+document.getElementById('s').textContent='state: '+(p.get('state')||'');
+</script>
